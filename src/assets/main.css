@@ -1,0 +1,382 @@
+@import './base.css';
+
+/* =====================================================
+   ANIMAÇÕES (usadas em todo o site)
+===================================================== */
+@keyframes aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entrar-esquerda {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* Classes prontas: basta colocar no HTML */
+.anim-subir     { animation: subir 0.4s ease both; }
+.anim-esquerda  { animation: entrar-esquerda 0.4s ease both; }
+.anim-flutuar   { animation: flutuar 6s ease-in-out infinite; }
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Páginas de listas com barra de filtros (Meus Projetos, Comunidade): um pouco mais largas */
+.main-container.larga { max-width: 1400px; padding-left: 24px; padding-right: 24px; }
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+/* Quem navega pelo teclado enxerga onde está */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Texto só para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* "Pular para o conteúdo": aparece quando se aperta Tab logo ao abrir a página */
+.pular-conteudo {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--branco);
+  color: #0b0b0f;
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+.pular-conteudo:focus { transform: none; }
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.titulo-pagina {
+  text-align: center;
+  color: var(--tinta);
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+/* =====================================================
+   BOTÕES (classes reutilizáveis)
+===================================================== */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--azul-botao);
+  color: var(--branco);
+  border: 2px solid var(--azul-botao);
+
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.btn:hover {
+  background: var(--azul-escuro);
+  border-color: var(--azul-escuro);
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--azul);
+  border-color: var(--azul);
+}
+
+/* =====================================================
+   CARTÃO (classe reutilizável)
+===================================================== */
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 28px;
+  transition: var(--transicao);
+}
+
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+/* =====================================================
+   ANIMAÇÕES NOVAS
+===================================================== */
+
+/* Cards "erguidos" de baixo para cima quando aparecem (use v-revelar no elemento) */
+@keyframes erguer {
+  from { opacity: 0; clip-path: inset(100% 0 0 0); }
+  to   { opacity: 1; clip-path: inset(-30px); }
+}
+
+.revelar { opacity: 0; }
+
+.revelar.visivel {
+  animation: erguer 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Botões com um brilho que atravessa ao passar o mouse */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  left: 130%;
+  transition: left 0.7s ease;
+}
+
+/* Quem prefere menos movimento vê os cards direto */
+@media (prefers-reduced-motion: reduce) {
+  .revelar { opacity: 1 !important; }
+}
+
+/* =====================================================
+   ESTADOS: carregando / vazio / erro
+===================================================== */
+.vazio {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 36px 24px;
+  text-align: center;
+  color: var(--texto-suave);
+  background: var(--superficie);
+  border: 1px dashed var(--borda);
+  border-radius: var(--raio);
+}
+
+.vazio a { font-weight: 700; }
+
+.erro-box {
+  border-style: solid;
+  border-color: var(--b-vermelho-borda);
+  background: var(--b-vermelho-bg);
+  color: var(--b-vermelho-fg);
+}
+
+/* =====================================================
+   LISTAS DE PROJETOS (Meus Projetos, Comunidade e Perfil)
+===================================================== */
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  transition: opacity 0.2s;
+}
+.grade-projetos.carregando { opacity: 0.55; pointer-events: none; }
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 15px;
+}
+.filtros:hover { transform: none; box-shadow: none; }
+.filtros .busca { position: relative; flex: 2 1 260px; min-width: 0; }
+
+/* Em telas largas (a partir de 1200px) a barra inteira cabe numa linha só; nas menores ela quebra em linhas
+   em vez de espremer os campos */
+@media (min-width: 1200px) {
+  .filtros { flex-wrap: nowrap; gap: 8px; padding: 12px; }
+  .filtros .busca { flex: 2 1 180px; }
+  .filtros select { flex: 1 1 100px; padding: 0 8px; font-size: 14px; text-overflow: ellipsis; }
+  .filtros .btn-filtro { flex-shrink: 0; padding: 0 12px; font-size: 14px; }
+  .filtros .marcar { flex-shrink: 0; }
+}
+.filtros .busca svg {
+  position: absolute; left: 12px; top: 50%;
+  width: 18px; height: 18px;
+  transform: translateY(-50%);
+  fill: none; stroke: var(--texto-suave); stroke-width: 2; stroke-linecap: round;
+  pointer-events: none;
+}
+.filtros input[type="search"], .filtros select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--texto);
+  font: inherit;
+}
+.filtros .busca input { padding-left: 40px; }
+.filtros select { flex: 1 1 150px; width: auto; min-width: 0; }
+.filtros .btn-filtro {
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--texto);
+  font: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.filtros .btn-filtro.estrela-filtro { color: var(--b-amarelo-fg); }
+.filtros .btn-filtro.ativo { background: var(--b-amarelo-bg); border-color: #e5b800; color: var(--b-amarelo-fg); }
+.filtros .btn-filtro.escuro { background: var(--acao); border-color: var(--acao); color: #fff; }
+.filtros .btn-filtro.azul { background: var(--b-azul-bg); border-color: var(--azul-claro); color: var(--b-azul-fg); }
+.filtros .btn-filtro:disabled { opacity: 0.5; cursor: not-allowed; }
+.filtros .marcar { display: inline-flex; align-items: center; gap: 7px; height: 42px; font-size: 14px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.filtros .marcar input { width: 18px; height: 18px; accent-color: var(--azul-botao); }
+
+.contagem { margin-bottom: 14px; color: var(--texto-suave); font-size: 14px; }
+
+/* =====================================================
+   ADMINISTRAÇÃO (listas e botões pequenos)
+===================================================== */
+.lista-admin { display: grid; gap: 12px; }
+.linha-admin { display: grid; gap: 10px; padding: 16px 18px; }
+.linha-admin:hover { transform: none; box-shadow: none; }
+.linha-admin .topo { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.linha-admin h3 { color: var(--tinta); font-size: 17px; overflow-wrap: anywhere; }
+.linha-admin h3 a { color: var(--tinta); }
+.linha-admin h3 a:hover { color: var(--azul); }
+.linha-admin .detalhe { color: var(--texto-suave); font-size: 14px; overflow-wrap: anywhere; }
+.linha-admin .citacao { padding: 8px 12px; background: var(--chip); border-left: 4px solid var(--borda-forte); border-radius: 0 8px 8px 0; font-size: 14px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.linha-admin .meta-linha { display: flex; flex-wrap: wrap; gap: 4px 16px; color: var(--texto-suave); font-size: 13px; }
+.acoes-linha { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px; }
+
+.btn-mini {
+  padding: 7px 13px;
+  background: var(--chip);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+.btn-mini:hover { border-color: var(--azul); color: var(--azul); }
+.btn-mini.principal { background: var(--azul-botao); border-color: var(--azul-botao); color: #fff; }
+.btn-mini.principal:hover { background: var(--azul-escuro); border-color: var(--azul-escuro); color: #fff; }
+.btn-mini.perigo { background: var(--b-vermelho-bg); border-color: var(--b-vermelho-borda); color: var(--b-vermelho-fg); }
+.btn-mini.perigo:hover { border-color: var(--b-vermelho-fg); color: var(--b-vermelho-fg); }
+.btn-mini:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.etq { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.etq.azul { background: var(--b-azul-bg); color: var(--b-azul-fg); }
+.etq.vermelho { background: var(--b-vermelho-bg); color: var(--b-vermelho-fg); }
+.etq.amarelo { background: var(--b-amarelo-bg); color: var(--b-amarelo-fg); }
+.etq.verde { background: var(--b-verde-bg); color: var(--b-verde-fg); }
+.etq.cinza { background: var(--b-cinza-bg); color: var(--b-cinza-fg); }
+
+/* =====================================================
+   ESQUELETO DE CARREGAMENTO (blocos cinza que "respiram" enquanto os dados chegam)
+===================================================== */
+@keyframes brilho {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+.esqueleto {
+  display: block;
+  border-radius: 8px;
+  background: linear-gradient(100deg, var(--chip) 30%, var(--superficie-suave) 50%, var(--chip) 70%);
+  background-size: 200% 100%;
+  animation: brilho 1.4s linear infinite;
+}
+
+/* =====================================================
+   IMPRESSÃO / PDF
+   Esconde menu, rodapé, banner e botões para gerar um
+   PDF limpo do detalhe do projeto (Imprimir → Salvar como PDF).
+===================================================== */
+@media print {
+  /* Imprime sempre no tema claro, mesmo se a tela estiver no escuro */
+  :root[data-tema="escuro"] {
+    --fundo: #fff; --superficie: #fff; --superficie-suave: #f7fbff; --chip: #eef2f7;
+    --texto: #111827; --texto-suave: #5b6675; --tinta: #0b0b0f; --borda: #ccc;
+    --b-amarelo-bg: #fff4d8; --b-amarelo-fg: #7a5a00; --b-azul-bg: #e4f2ff; --b-azul-fg: #164a7c;
+    --b-verde-bg: #e5f8ed; --b-verde-fg: #1b6b40; --b-vermelho-bg: #ffe3e3; --b-vermelho-fg: #a52b2b;
+    --b-cinza-bg: #eef2f7; --b-cinza-fg: #475467; --b-laranja-bg: #fff2d6; --b-laranja-fg: #8a5300;
+  }
+
+  .pular-conteudo,
+  .navbar,
+  #footer,
+  #main-banner,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .main-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  a[href]::after {
+    content: "";
+  }
+}

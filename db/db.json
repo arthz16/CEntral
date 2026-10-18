@@ -1,0 +1,208 @@
+{
+  "categorias": [
+    {
+      "id": "construcao",
+      "nome": "Construção",
+      "subcategorias": [
+        {
+          "nome": "Casa residencial",
+          "itens": [
+            "Tijolo",
+            "Cimento",
+            "Areia",
+            "Brita",
+            "Ferro",
+            "Telha",
+            "Piso",
+            "Tinta"
+          ]
+        },
+        {
+          "nome": "Muro",
+          "itens": [
+            "Tijolo",
+            "Bloco de concreto",
+            "Cimento",
+            "Areia",
+            "Pilar de ferro",
+            "Reboco",
+            "Portão"
+          ]
+        },
+        {
+          "nome": "Reforma",
+          "itens": [
+            "Massa corrida",
+            "Tinta",
+            "Piso",
+            "Azulejo",
+            "Gesso",
+            "Fiação elétrica",
+            "Encanamento"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sites",
+      "nome": "Sites",
+      "subcategorias": [
+        {
+          "nome": "Site institucional",
+          "itens": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Vue.js",
+            "WordPress"
+          ]
+        },
+        {
+          "nome": "Loja virtual",
+          "itens": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python",
+            "Django",
+            "Banco de dados",
+            "Pagamento online"
+          ]
+        },
+        {
+          "nome": "Sistema web",
+          "itens": [
+            "Python",
+            "Node.js",
+            "Vue.js",
+            "API REST",
+            "PostgreSQL",
+            "Login de usuários"
+          ]
+        },
+        {
+          "nome": "Landing page",
+          "itens": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Formulário de contato"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carros",
+      "nome": "Manutenção de carros",
+      "subcategorias": [
+        {
+          "nome": "Lataria e funilaria",
+          "itens": [
+            "Porta",
+            "Capô",
+            "Para-choque",
+            "Pintura",
+            "Massa plástica",
+            "Retrovisor"
+          ]
+        },
+        {
+          "nome": "Motor",
+          "itens": [
+            "Óleo",
+            "Filtro de óleo",
+            "Vela",
+            "Correia dentada",
+            "Bomba d'água",
+            "Radiador"
+          ]
+        },
+        {
+          "nome": "Freios e suspensão",
+          "itens": [
+            "Pastilha de freio",
+            "Disco de freio",
+            "Amortecedor",
+            "Mola",
+            "Pivô",
+            "Fluido de freio"
+          ]
+        },
+        {
+          "nome": "Parte elétrica",
+          "itens": [
+            "Bateria",
+            "Alternador",
+            "Faróis",
+            "Lâmpadas",
+            "Fusíveis",
+            "Motor de partida"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marcenaria",
+      "nome": "Marcenaria",
+      "subcategorias": [
+        {
+          "nome": "Móveis planejados",
+          "itens": [
+            "MDF",
+            "Dobradiça",
+            "Puxador",
+            "Parafuso",
+            "Cola",
+            "Verniz"
+          ]
+        },
+        {
+          "nome": "Portas e janelas",
+          "itens": [
+            "Madeira maciça",
+            "Batente",
+            "Fechadura",
+            "Vidro",
+            "Verniz",
+            "Dobradiça"
+          ]
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json",
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Administração",
+      "usuario": "arthur",
+      "email": "arturfreitas587@gmail.com",
+      "senhaHash": "84dc1cb89c7acd3b5bc2a81aa9076bd6:935246467a7ce659973dfb814028f7b0d4e72718d7442a66d5b10013acb128f513f75851b91efcf34ffe64b5574a62f493cd798ef89c3a816b2b593956a87c85",
+      "criadoEm": "2026-10-18T03:51:50.208Z",
+      "projetos": [],
+      "sessoes": [
+        {
+          "jti": "0e4e8b3b76368f5c74cd0cb2",
+          "exp": 1792900471760
+        }
+      ],
+      "papel": "admin",
+      "bloqueados": [],
+      "avisos": [],
+      "bio": "",
+      "seguindo": [],
+      "notificacoes": []
+    }
+  ],
+  "contadores": {
+    "usuarios": 2,
+    "projetos": 0,
+    "notificacoes": 0,
+    "denuncias": 0,
+    "auditoria": 0,
+    "avisos": 0,
+    "comentarios": 0
+  },
+  "denuncias": [],
+  "auditoria": []
+}

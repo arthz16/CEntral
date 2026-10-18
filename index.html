@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#0b0b0f">
+    <title>Central Projetos</title>
+    <!-- Aplica o tema salvo antes de desenhar a página (evita o "piscar" claro no modo escuro) -->
+    <script>
+      try {
+        var t = localStorage.getItem('cp_tema')
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro'
+        document.documentElement.dataset.tema = t
+        var u = JSON.parse(localStorage.getItem('cp_usuario') || 'null')
+        document.documentElement.dataset.papel = u && u.papel === 'admin' ? 'admin' : 'usuario'
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

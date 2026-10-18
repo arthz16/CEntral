@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "nome": "Casa Residencial de 2 Quartos",
+    "descricao": "Construção de casa térrea com 2 quartos, sala, cozinha e banheiro, em terreno de 200 m². Inclui fundação, estrutura, cobertura e acabamento completo.",
+    "categoria": "Construção",
+    "subcategoria": "Casa residencial",
+    "itens": [
+      "Tijolo",
+      "Cimento",
+      "Areia",
+      "Brita",
+      "Ferro",
+      "Telha",
+      "Piso",
+      "Tinta"
+    ],
+    "orcamento": 185000,
+    "responsavel": "Equipe Obra Forte",
+    "dataCriacao": "2026-03-10",
+    "prazo": "2026-12-20",
+    "status": "Em andamento"
+  },
+  {
+    "id": 2,
+    "nome": "Muro com Portão Automático",
+    "descricao": "Muro de 32 metros na frente e laterais do terreno, com pilares de ferro, reboco liso e portão de correr automatizado.",
+    "categoria": "Construção",
+    "subcategoria": "Muro",
+    "itens": [
+      "Bloco de concreto",
+      "Cimento",
+      "Areia",
+      "Pilar de ferro",
+      "Reboco",
+      "Portão"
+    ],
+    "orcamento": 18500,
+    "responsavel": "Carlos Almeida",
+    "dataCriacao": "2026-01-18",
+    "prazo": "2026-03-05",
+    "status": "Concluído"
+  },
+  {
+    "id": 3,
+    "nome": "Reforma de Banheiro",
+    "descricao": "Troca de revestimento, encanamento e forro de gesso em banheiro de 6 m², com novo box e bancada.",
+    "categoria": "Construção",
+    "subcategoria": "Reforma",
+    "itens": [
+      "Azulejo",
+      "Gesso",
+      "Encanamento",
+      "Piso",
+      "Massa corrida"
+    ],
+    "orcamento": 12400,
+    "responsavel": "Fernanda Lopes",
+    "dataCriacao": "2026-09-20",
+    "prazo": "2026-11-30",
+    "status": "Planejamento"
+  },
+  {
+    "id": 4,
+    "nome": "Site Institucional para Clínica",
+    "descricao": "Site de apresentação com serviços, equipe, localização e formulário de agendamento, otimizado para celular.",
+    "categoria": "Sites",
+    "subcategoria": "Site institucional",
+    "itens": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Vue.js"
+    ],
+    "orcamento": 6800,
+    "responsavel": "Mariana Costa",
+    "dataCriacao": "2026-02-02",
+    "prazo": "2026-04-10",
+    "status": "Concluído"
+  },
+  {
+    "id": 5,
+    "nome": "Loja Virtual de Roupas",
+    "descricao": "E-commerce com catálogo, carrinho, painel administrativo, cadastro de clientes e pagamento online por Pix e cartão.",
+    "categoria": "Sites",
+    "subcategoria": "Loja virtual",
+    "itens": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Python",
+      "Django",
+      "Banco de dados",
+      "Pagamento online"
+    ],
+    "orcamento": 14500,
+    "responsavel": "Rafael Nunes",
+    "dataCriacao": "2026-06-15",
+    "prazo": "2026-11-15",
+    "status": "Em andamento"
+  },
+  {
+    "id": 6,
+    "nome": "Sistema de Controle de Estoque",
+    "descricao": "Sistema web para cadastrar produtos, registrar entradas e saídas e gerar relatórios, com login e níveis de acesso.",
+    "categoria": "Sites",
+    "subcategoria": "Sistema web",
+    "itens": [
+      "Python",
+      "Node.js",
+      "Vue.js",
+      "API REST",
+      "PostgreSQL",
+      "Login de usuários"
+    ],
+    "orcamento": 22000,
+    "responsavel": "Equipe DevSul",
+    "dataCriacao": "2026-09-28",
+    "prazo": "2027-02-28",
+    "status": "Planejamento"
+  },
+  {
+    "id": 7,
+    "nome": "Funilaria e Pintura de Porta",
+    "descricao": "Reparo de amassado na porta dianteira, aplicação de massa plástica, lixamento e pintura com acabamento em verniz.",
+    "categoria": "Manutenção de carros",
+    "subcategoria": "Lataria e funilaria",
+    "itens": [
+      "Porta",
+      "Massa plástica",
+      "Pintura"
+    ],
+    "orcamento": 2300,
+    "responsavel": "Oficina Silva",
+    "dataCriacao": "2026-07-04",
+    "prazo": "2026-07-18",
+    "status": "Concluído"
+  },
+  {
+    "id": 8,
+    "nome": "Revisão Completa do Motor",
+    "descricao": "Troca de óleo, filtro, velas, correia dentada e bomba d'água, com checagem geral do sistema de arrefecimento.",
+    "categoria": "Manutenção de carros",
+    "subcategoria": "Motor",
+    "itens": [
+      "Óleo",
+      "Filtro de óleo",
+      "Vela",
+      "Correia dentada",
+      "Bomba d'água"
+    ],
+    "orcamento": 3150,
+    "responsavel": "Auto Center Minas",
+    "dataCriacao": "2026-09-30",
+    "prazo": "2026-10-12",
+    "status": "Em andamento"
+  },
+  {
+    "id": 9,
+    "nome": "Guarda-roupa Planejado",
+    "descricao": "Guarda-roupa de casal em MDF com portas de correr, gavetas com amortecedor e nichos internos.",
+    "categoria": "Marcenaria",
+    "subcategoria": "Móveis planejados",
+    "itens": [
+      "MDF",
+      "Dobradiça",
+      "Puxador",
+      "Parafuso",
+      "Verniz"
+    ],
+    "orcamento": 7900,
+    "responsavel": "Marcenaria Ipê",
+    "dataCriacao": "2026-10-01",
+    "prazo": "2026-11-20",
+    "status": "Planejamento"
+  }
+]
