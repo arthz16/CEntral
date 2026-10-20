@@ -184,10 +184,6 @@
         {
           "jti": "0e4e8b3b76368f5c74cd0cb2",
           "exp": 1792900471760
-        },
-        {
-          "jti": "37d5860a6b2e5bb036e3b65b",
-          "exp": 1793037593725
         }
       ],
       "papel": "admin",
@@ -246,7 +242,8 @@
           "favorito": true,
           "publico": true,
           "curtidas": [
-            3
+            3,
+            6
           ],
           "comentarios": []
         }
@@ -257,17 +254,128 @@
       "avisos": [],
       "bio": "",
       "seguindo": [],
-      "notificacoes": []
+      "notificacoes": [
+        {
+          "id": 8,
+          "tipo": "seguidor",
+          "deId": 6,
+          "projetoId": null,
+          "trecho": "",
+          "em": "2026-10-19T19:14:19.474Z",
+          "lida": false
+        },
+        {
+          "id": 9,
+          "tipo": "curtida",
+          "deId": 6,
+          "projetoId": 1,
+          "trecho": "",
+          "em": "2026-10-19T19:14:35.770Z",
+          "lida": false
+        },
+        {
+          "id": 10,
+          "tipo": "comentario",
+          "deId": 6,
+          "projetoId": 1,
+          "trecho": "maneiro",
+          "em": "2026-10-19T19:14:41.665Z",
+          "lida": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Candy",
+      "usuario": "candyduces",
+      "email": "candy@gmail.com",
+      "senhaHash": "9eaacb4aecc73b8c2d3aab327fd081a1:326c3db95598e9bd39c0f38c6a17c603df10f1e523808c540b09706f4ea3d18f2ec17a11b6f43efa3ed087f4075f3875f0a69a48da1f41489feccb031905c593",
+      "criadoEm": "2026-10-19T19:07:53.464Z",
+      "projetos": [
+        {
+          "id": 2,
+          "nome": "Casa",
+          "descricao": "casa simples",
+          "categoria": "Construção",
+          "subcategoria": "Casa residencial",
+          "itens": [
+            {
+              "nome": "Tijolo",
+              "quantidade": 3,
+              "valorUnitario": 100,
+              "comprado": false
+            },
+            {
+              "nome": "Cimento",
+              "quantidade": 2,
+              "valorUnitario": 50,
+              "comprado": false
+            },
+            {
+              "nome": "Areia",
+              "quantidade": 2,
+              "valorUnitario": 20,
+              "comprado": true
+            },
+            {
+              "nome": "prego",
+              "quantidade": 3,
+              "valorUnitario": 5,
+              "comprado": true
+            }
+          ],
+          "orcamento": 1000.01,
+          "responsavel": "Candy",
+          "dataCriacao": "2026-10-19",
+          "prazo": "2026-10-28",
+          "status": "Em andamento",
+          "prioridade": "Alta",
+          "favorito": false,
+          "publico": true,
+          "curtidas": [
+            6
+          ],
+          "comentarios": [
+            {
+              "id": 4,
+              "usuarioId": 6,
+              "texto": "cu",
+              "criadoEm": "2026-10-19T19:13:12.963Z"
+            }
+          ]
+        }
+      ],
+      "sessoes": [],
+      "papel": "usuario",
+      "bloqueados": [],
+      "avisos": [
+        {
+          "id": 3,
+          "texto": "Um comentário seu no projeto \"Casa\" foi removido pela moderação. Motivo: algo errado",
+          "em": "2026-10-19T19:19:33.198Z"
+        }
+      ],
+      "bio": "",
+      "seguindo": [
+        3
+      ],
+      "notificacoes": [],
+      "banido": {
+        "em": "2026-10-19T19:18:22.828Z",
+        "ate": null,
+        "motivo": "fz algo errado",
+        "por": "arthur"
+      }
     }
   ],
   "contadores": {
-    "usuarios": 5,
-    "projetos": 1,
-    "notificacoes": 7,
+    "usuarios": 6,
+    "projetos": 2,
+    "notificacoes": 10,
     "denuncias": 1,
-    "auditoria": 8,
-    "avisos": 2,
-    "comentarios": 3
+    "auditoria": 10,
+    "avisos": 3,
+    "comentarios": 5
   },
   "denuncias": [
     {
@@ -357,6 +465,24 @@
       "alvo": "@ghzz",
       "motivo": "",
       "em": "2026-10-19T18:00:55.899Z"
+    },
+    {
+      "id": 9,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "suspendeu",
+      "alvo": "@candyduces",
+      "motivo": "fz algo errado (por tempo indeterminado)",
+      "em": "2026-10-19T19:18:22.828Z"
+    },
+    {
+      "id": 10,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "apagou comentário",
+      "alvo": "comentário 5 de @candyduces no projeto 1",
+      "motivo": "algo errado",
+      "em": "2026-10-19T19:19:33.198Z"
     }
   ]
 }
