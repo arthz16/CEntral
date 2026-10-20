@@ -184,8 +184,74 @@
         {
           "jti": "0e4e8b3b76368f5c74cd0cb2",
           "exp": 1792900471760
+        },
+        {
+          "jti": "37d5860a6b2e5bb036e3b65b",
+          "exp": 1793037593725
         }
       ],
+      "papel": "admin",
+      "bloqueados": [],
+      "avisos": [],
+      "bio": "",
+      "seguindo": [],
+      "notificacoes": []
+    },
+    {
+      "id": 3,
+      "nome": "Gabriel Henrique",
+      "usuario": "ghzz",
+      "email": "gabriel@gmail.com",
+      "senhaHash": "00dd8b5478e3a65327968b7aa3b3b6d8:548a87cb2eb8c1138bfaa20e73cdf777d2f3424b2b299af8a51595b5f4e94acc0e88b1471ef095707400a4a84e27d202d65332edb0c53b0bf73f80193578d3d8",
+      "criadoEm": "2026-10-19T17:41:21.613Z",
+      "projetos": [
+        {
+          "id": 1,
+          "nome": "Casa",
+          "descricao": "ccu",
+          "categoria": "Sites",
+          "subcategoria": "Sistema web",
+          "itens": [
+            {
+              "nome": "Node.js",
+              "quantidade": 3,
+              "valorUnitario": 200,
+              "comprado": true
+            },
+            {
+              "nome": "Vue.js",
+              "quantidade": 4,
+              "valorUnitario": 100,
+              "comprado": false
+            },
+            {
+              "nome": "PostgreSQL",
+              "quantidade": 3,
+              "valorUnitario": 5,
+              "comprado": false
+            },
+            {
+              "nome": "Login de usuários",
+              "quantidade": 3,
+              "valorUnitario": 100,
+              "comprado": true
+            }
+          ],
+          "orcamento": 1499.98,
+          "responsavel": "Gabriel Henrique",
+          "dataCriacao": "2026-10-19",
+          "prazo": "2026-11-04",
+          "status": "Em andamento",
+          "prioridade": "Alta",
+          "favorito": true,
+          "publico": true,
+          "curtidas": [
+            3
+          ],
+          "comentarios": []
+        }
+      ],
+      "sessoes": [],
       "papel": "admin",
       "bloqueados": [],
       "avisos": [],
@@ -195,14 +261,102 @@
     }
   ],
   "contadores": {
-    "usuarios": 2,
-    "projetos": 0,
-    "notificacoes": 0,
-    "denuncias": 0,
-    "auditoria": 0,
-    "avisos": 0,
-    "comentarios": 0
+    "usuarios": 5,
+    "projetos": 1,
+    "notificacoes": 7,
+    "denuncias": 1,
+    "auditoria": 8,
+    "avisos": 2,
+    "comentarios": 3
   },
-  "denuncias": [],
-  "auditoria": []
+  "denuncias": [
+    {
+      "id": 1,
+      "tipo": "projeto",
+      "projetoId": 1,
+      "usuarioId": 3,
+      "motivo": "ofensivo",
+      "detalhe": "cu",
+      "denuncianteId": 4,
+      "criadoEm": "2026-10-19T17:47:48.008Z",
+      "status": "resolvida",
+      "nota": "A pessoa foi suspensa pela moderação.",
+      "resolvidoEm": "2026-10-19T17:51:32.805Z",
+      "resolvidoPor": "sistema"
+    }
+  ],
+  "auditoria": [
+    {
+      "id": 1,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "suspendeu",
+      "alvo": "@ghzz",
+      "motivo": "Tu e beta (1 dias)",
+      "em": "2026-10-19T17:51:32.805Z"
+    },
+    {
+      "id": 2,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "promoveu a administrador",
+      "alvo": "@caramelo",
+      "motivo": "",
+      "em": "2026-10-19T17:55:46.820Z"
+    },
+    {
+      "id": 3,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "encerrou a suspensão de",
+      "alvo": "@ghzz",
+      "motivo": "",
+      "em": "2026-10-19T17:56:03.953Z"
+    },
+    {
+      "id": 4,
+      "adminId": 5,
+      "admin": "caramelo",
+      "acao": "apagou comentário",
+      "alvo": "comentário 1 de @ghzz no projeto 1",
+      "motivo": "INDEVIDO",
+      "em": "2026-10-19T17:58:06.055Z"
+    },
+    {
+      "id": 5,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "excluiu a conta de",
+      "alvo": "@candyduces (candy01@gmail.com)",
+      "motivo": "pq sim",
+      "em": "2026-10-19T18:00:10.809Z"
+    },
+    {
+      "id": 6,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "rebaixou para usuário",
+      "alvo": "@caramelo",
+      "motivo": "",
+      "em": "2026-10-19T18:00:37.703Z"
+    },
+    {
+      "id": 7,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "excluiu a conta de",
+      "alvo": "@caramelo (caramelo@gmail.com)",
+      "motivo": "sim",
+      "em": "2026-10-19T18:00:44.664Z"
+    },
+    {
+      "id": 8,
+      "adminId": 1,
+      "admin": "arthur",
+      "acao": "promoveu a administrador",
+      "alvo": "@ghzz",
+      "motivo": "",
+      "em": "2026-10-19T18:00:55.899Z"
+    }
+  ]
 }
